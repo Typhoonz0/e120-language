@@ -1,5 +1,5 @@
-$ draws ray tracing heheheha
-$ over 500 lines and counting of code that could be optimised - but it works so eh
+$ draws an ascii "path tracer"
+$ over 500 lines and counting of code that absolutely could be optimised - but this was a dare so, don;t take this seriously, just a random example on what this can do
 $ refrence cube:
 $+------+.     
 $|`.      `.    
@@ -21,7 +21,6 @@ $ 6 = period (.)
 $ 10 = space on top (a)
 $ 20 = space on left (b)
 $ 30 = space on front (c)
-$ 40 = SOON
 $ 666666 = new line (\n)
 
 start 
