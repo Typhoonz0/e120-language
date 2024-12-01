@@ -142,7 +142,7 @@ Stops the program for debugging.
 
 ### `funcpos`
 **Usage**: `funcpos`
-Prints where all the functions are in a script. 
+Prints where all the functions are in a script.
 After using funcpos, delete it before running your code otherwise you code won't work.
 
 ### `external`
