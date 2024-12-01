@@ -64,6 +64,7 @@ This command marks the beginning of the program. Without this command, your prog
 
 ### `$`
 **Usage**: `$ annotation`
+
 Use `$` to write a comment.
 
 ### `in`
