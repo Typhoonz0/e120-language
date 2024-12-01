@@ -1,0 +1,54 @@
+$ Simple caclulator program written in e120
+start
+    out "Calculator"
+    goto main
+stop
+main:
+    prompt "> "
+    out "\nEnter a number "
+    in
+    out "Enter a number "
+    in
+    out "Enter an operation (1 = +, 2 = -, 3 = x, 4 = /, 0 = exit) "
+    in
+    ifequ 1 addfunc
+    ifequ 2 subfunc
+    ifequ 3 mulfunc
+    ifequ 4 divfunc
+    ifequ 0 halt
+done
+
+addfunc:
+    popquiet
+    add
+    out "Result: "
+    pop
+    goto main
+done
+
+subfunc:
+    popquiet
+    sub
+    out "Result: "
+    pop
+    goto main
+done
+
+mulfunc:
+    popquiet
+    mul
+    out "Result: "
+    pop
+    goto main
+done
+
+divfunc:
+    popquiet
+    div
+    out "Result: "
+    pop
+    goto main
+done
+
+halt:
+    stop

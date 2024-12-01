@@ -1,0 +1,101 @@
+$ @@@@@@@@  @@@  @@@@@@   @@@@@@ 
+$ @@!      @@@@ @@   @@@ @@!  @@@
+$ @!!!:!    !@!   .!!@!  @!@  !@!
+$ !!:       !!!  !!:     !!:  !!!
+$ : :: ::   ::  :.:: :::  : : :: 
+
+$ e120 - a language by Typhoonz0 - credit to bvdl.io on YouTube for the original interpreter
+$ this file is to show what e120 can do
+$ commands showcased here include but aren't limited to:
+$ start, stop, done, push, pop, stack, comment, prompt, add, sub, mul, div, in, out, ifequ, ifneq, ifgtr, iflsr, ifequsp, ifgtrsp, ifneqsp, program, top, goto, shell, external, clear, fullstack, stacksize, breakpoint, !*!
+$ ascii art font used in lines 1 - 5 is "small poison"
+$ you don't need to use indentation at all in e120 but it looks nicer
+
+start $ your program starts here - without this your program will not run
+    $comment "sss" $ makes it so you can use a character - in our case sss as well as $ to comment
+    prompt "> " $ when using the "in" command, it prompts the user using this symbol
+    $ funcpos $ this is pretty advanced but useful - tells us where functions are parsed so we can skip to them when running scripts with external
+    goto main $ it is good practise but optional to put your enviroment variables like these and then call your main function
+
+done
+main: 
+    $ define a function like this
+    $ program $ outputs the entire parsed program to the console - very useful when debugging
+    out "Hello World \n" $ prints onto the consoles
+    out "When nothing is assigned to a stack, it is filled with "
+    stack 10 $ prints the integer on stack index 10 - which is 0
+    push 1 $ pushes 1 onto the stack
+    push 2.2 $ pushes 2.2 onto the stack
+    add $ adds the top two numbers on the stack
+    out "\nThe stack only contains floats and integers like 1, 2.2, " $ makes sure the next thing printed is on the same line as this statement 
+    top $ always prints the 0th element on the stack
+    out "\nEnter an number? " 
+    in $ prompts the user for an input and saves it onto the stack
+    out "You entered: "
+    pop $ prints the output of the stack pointer's position and moves the stack pointer 
+    push 0 $ comment this line out using a dollar sign to change the outcome of the program
+    ifequ 0 function1 $ if the 0th index also known as the top - of the stack is equal to the first argument given - in this case 0 - run function1
+    ifequ 1 function2
+    $ this executes if none of the conditions are met
+    goto function3 $ goto executes a function regardless of a condition
+    out "Huh?" 
+done 
+    $ only fully stops the program if there is nothing left to execute
+    $ READ THIS IN ENTIRETY:
+    $ use STOP when a program is fully exiting
+    $ use DONE to prevent unexpected code execution
+
+function1:
+    out "\nA function was executed"
+    goto function2
+done 
+
+function2:
+    external "modules/external.e120" $ you can call other .e120 scripts like this - similar to importing/including libraries but this executes the whole script
+    external "modules/external.e120 4" $ as mentioned above,you can call scripts at a certain line (usually a function)
+    shell "echo This is running in your shell" $ uses your shell to execute commands
+    shell "python3 -c 'import time; time.sleep(1)'"
+    $ shell "python3 -c 'import os; print("You are on posix" if os.name == "posix" else "You are not on posix")'" - run python shell one-liners if e120 isn't enough for you
+    $ breakpoint
+    $ you can use breakpoint (or @@@) to stop the program loudly for debugging - uncomment the above line to test it  
+    goto function3
+done
+
+function3:
+    clear $ clears the stack fully
+    stacksize 8 $ by default, the stack is set to 1024 indexes, this sets it to 8
+    out "Heres what the stack looks like when the stack's size is 8, and cleared:\n"
+    fullstack $ this prints out the entire stack
+    goto function4
+done 
+
+function4:
+    $ this function is to show what the if statements will do
+    clear
+    push 10 $ none of these will execute since the top stack is 10 
+    iflsr 11 function5 $ if number is lesser than the top stack - this is buggy currently so use at your own risk
+    ifequ 0 function5 $ if number is equal to the top stack 
+    ifneq 10 function5 $ if number is not equal to the top stack 
+    ifgtr 8 function5 $ if number is greater than the top stack 
+    ifequsp 1 function5 $ if number is equal to the stack pointer 
+    ifneqsp 0 function5 $ if number is not equal to the stack pointer 
+    ifgtrsp 0 function5 $  if number is greater than the stack pointer 
+    iflsrsp 100 function5 $ if number is lesser than the stack pointer 
+    clear
+    goto function5 
+done
+
+function5:
+    $ In this function, we fill the stack with 7s using a while loop
+    push 7
+    ifneqsp 7 function5 
+    $ this loops function5 until the stack pointer is at 7 
+    $ now the pointer is at 7, it continues the code excection
+    out "The stack was filled with 7's using a while loop:"
+    fullstack
+    clear 
+    goto halt
+done
+
+halt:
+    stop $ as mentioned above, use stop when a prgram is fully finished, and use done to prevent unexpected code execution

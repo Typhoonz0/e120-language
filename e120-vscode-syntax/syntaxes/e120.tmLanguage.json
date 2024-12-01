@@ -1,0 +1,36 @@
+{
+  "name": "E120 Language",
+  "scopeName": "source.e120",
+  "patterns": [
+    { "name": "keyword.control.e120", "match": "\\b(start|push|stack|comment|prompt|add|sub|mul|div|in|out|nfout|ifequ|ifneq|ifgtr|iflsr|ifequsp|ifgtrsp|ifneqsp|iflsrsp|errorquiet|errorloud|program|top|goto|shell|external|clear|fullstack|stacksize|breakpoint|pop|popquiet|@@@|done|stacklen|funcpos)\\b" },
+    { "name": "constant.numeric.e120", "match": "\\b\\d+\\b" },
+    { "name": "comment.line.e120", "match": "\\$.*" },
+    { "name": "entity.name.function.e120", "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(" },
+    { "name": "punctuation.definition.bracket.e120", "match": "\\b(stop)\\s*$" },
+    {
+      "name": "string.quoted.single.e120",
+      "begin": "'",
+      "end": "'",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.e120" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.e120" }
+      }
+    },
+    {
+      "name": "string.quoted.double.e120",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.e120" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.e120" }
+      }
+    }
+    
+  ],
+  "repository": {},
+  "scope": "text.e120"
+}

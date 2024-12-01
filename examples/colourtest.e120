@@ -1,0 +1,15 @@
+$ colourtest.e120
+$ This is to show how the external module works in a practical sense by colouring the text using ansi escape codes 
+
+start
+    external "modules/ansi-colours.e120 5"
+    out "Red Text \n"
+    external "modules/ansi-colours.e120 8"
+    out "Yellow Text \n"
+    external "modules/ansi-colours.e120 11"
+    out "Green Text \n" 
+    external "modules/ansi-colours.e120 14"
+    out "Blue Text \n"
+    external "modules/ansi-colours.e120 17"
+    out "White Text \n"
+stop

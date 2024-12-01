@@ -1,0 +1,9 @@
+$ tests the functionality of external functions and scripts
+
+start 
+    out "\nAn external script was run\n"
+done
+
+func:
+    out "An external function was run\n"
+done

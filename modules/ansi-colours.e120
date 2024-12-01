@@ -1,0 +1,21 @@
+$ Colours your terminal text - run examples/colourtest.e120 to see the results
+start
+    out "Ansi colours - call this script with these numbers to colours your terminal: "
+    funcpos
+stop
+red:
+    out "[1;31m"
+done
+yellow:
+    out "[1;33m"
+done 
+green:
+    out "[1;32m"
+done
+blue:
+    out "[1;34m"
+done
+reset:
+    out "[0m"
+done
+    

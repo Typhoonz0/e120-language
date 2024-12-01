@@ -1,0 +1,24 @@
+$ test2.e ported to e120
+$ tests stack memory 
+$ e120 does not have a string stack - since the string stack was only added to e because i was bored
+
+start
+    out "Memory Test \n"
+    stacksize 10
+    push 256
+    push 128
+    push 64
+    out "Available memory: "
+    stacklen
+    out "Raw contents: \n"
+    fullstack
+    clear
+    stacksize 3
+    push 1
+    push 2
+    push 3
+    out "Available memory: "
+    stacklen
+    out "Raw contents: \n"
+    fullstack
+stop

@@ -1,0 +1,34 @@
+$ old example program, don't learn e120 from this
+
+start
+program $ hi
+$ shell "echo shell command" - you can run shell commands like this
+$ calls an external e120 script
+external "external.e120"
+push 1
+push 12
+add
+out "@@@@@@@@  @@@  @@@@@@   @@@@@@  \n" 
+out "@@!      @@@@ @@   @@@ @@!  @@@ \n"
+out "@!!!:!    !@!   .!!@!  @!@  !@! \n"
+out "!!:       !!!  !!:     !!:  !!! \n"
+out ": :: ::   ::  :.:: :::  : : ::  \n"
+
+$ Output to console
+out "Hello World \n"
+push 1 $ comment this line out to see the results
+$ if 1 is equal to the top of the stack, goto a
+ifequ 1 a
+$ under here, this is what happens if the above condition is not met, like an "else" keyword 
+$ remember to add "stop" otherwise the code will still excecute even when the condition is not met
+goto b
+done
+a:
+out "The above numbers are equal \n"
+clear
+$ fullstack
+stop
+
+b:
+out "The above numbers arent equal \n"
+stop

@@ -1,0 +1,527 @@
+$ draws ray tracing heheheha
+$ over 500 lines and counting of code that could be optimised - but it works so eh
+$ refrence cube:
+$+------+.     
+$|`.      `.    
+$|  `+------+  
+$|   |      |  
+$+   |      |  
+$ `. |      |    
+$   `+------+   
+
+$
+$ controls:
+$ 0 = space ( )
+$ 1 = plus (+)
+$ 2 = dash (-)
+$ 3 = pipe (|)
+$ 4 = solid face (@)
+$ 5 = quote (')
+$ 6 = period (.)
+$ 10 = space on top (a)
+$ 20 = space on left (b)
+$ 30 = space on front (c)
+$ 40 = SOON
+$ 666666 = new line (\n)
+
+start 
+out ""
+out "+------+. \n"
+out "|'.;;;;;;'.  \n"
+out "|;;'+------+ \n"
+out "+;;;|;;;;;;| \n"
+out " '.;|;;;;;;| \n"
+out "   '+------+  \n"
+    goto creation
+done
+creation:
+    $ creation of cube outline
+    $ you have to write the whole thing backwards - so up here is the last part
+    push 1
+    push 2
+    push 2
+    push 2
+    push 2
+    push 2
+    push 2
+    push 1
+    push 5
+    push 0
+    push 0       
+    push 0
+    push 666666
+    push 3
+    push 30
+    push 30  
+    push 30
+    push 30
+    push 30
+    push 30
+    push 3
+    push 20
+    push 6
+    push 5       
+    push 0
+    push 666666
+    push 3
+    push 30
+    push 30 
+    push 30
+    push 30
+    push 30
+    push 30
+    push 3
+    push 20
+    push 20
+    push 20
+    push 1
+    push 666666
+    push 1
+    push 2
+    push 2
+    push 2
+    push 2
+    push 2
+    push 2
+    push 1
+    push 5
+    push 20
+    push 20
+    push 3
+    push 666666
+    push 0
+    push 6
+    push 5  
+    push 10
+    push 10
+    push 10
+    push 10
+    push 10
+    push 10
+    push 6
+    push 5       
+    push 3
+    push 666666
+    push 6
+    push 1
+    push 2
+    push 2
+    push 2
+    push 2
+    push 2
+    push 2
+    push 1
+    goto main
+done
+
+main:
+    errorquiet
+    out "Very basic pathtracer \n"
+    out "Where to place the light (1 = top, 2 = left, 3 = front) > "
+    in
+    ifequ 1 drawxt
+    ifequ 2 drawxl
+    ifequ 3 drawxf
+    $ ifequ 4 drawxm - MIDDLE SOON!
+    goto main
+done
+
+drawxt:
+    popquiet
+    goto drawxtop
+done
+
+drawxf:
+    popquiet
+    goto drawxfront
+done
+
+drawxl:
+    popquiet
+    goto drawxleft
+done
+
+drawxm:
+    popquiet
+    goto drawxmiddle
+done
+
+
+drawxtop:
+    ifequ 0 draw0top
+    ifequ 1 draw1top
+    ifequ 2 draw2top
+    ifequ 3 draw3top
+    ifequ 4 draw4top
+    ifequ 5 draw5top
+    ifequ 6 draw6top
+    ifequ 10 draw10lighttop
+    ifequ 20 draw20mediumtop
+    ifequ 30 draw30mediumtop
+    ifequ 666666 draw666666top
+    out "Invalid character"
+done
+
+drawxleft:
+    ifequ 0 draw0left
+    ifequ 1 draw1left
+    ifequ 2 draw2left
+    ifequ 3 draw3left
+    ifequ 4 draw4left
+    ifequ 5 draw5left
+    ifequ 6 draw6left
+    ifequ 10 draw10mediumleft
+    ifequ 20 draw20lightleft
+    ifequ 30 draw30mediumleft
+    ifequ 666666 draw666666left
+    out "Invalid character"
+done
+
+drawxfront:
+    ifequ 0 draw0front
+    ifequ 1 draw1front
+    ifequ 2 draw2front
+    ifequ 3 draw3front
+    ifequ 4 draw4front
+    ifequ 5 draw5front
+    ifequ 6 draw6front
+    ifequ 10 draw10darkfront
+    ifequ 20 draw20mediumfront
+    ifequ 30 draw30lightfront
+    ifequ 666666 draw666666front
+    out "Invalid character"
+done
+
+draw0top:
+    out " "
+    popquiet
+    goto drawxtop
+done
+
+draw1top:
+    out "+"
+    popquiet
+    goto drawxtop 
+done
+
+draw2top:
+    out "-"
+    popquiet
+    goto drawxtop 
+done
+
+draw3top:
+    out "|"
+    popquiet
+    goto drawxtop 
+done
+
+draw4top:
+    out "W"
+    popquiet
+    goto drawxtop 
+done
+
+draw5top:
+    out "'"
+    popquiet
+    goto drawxtop 
+done
+
+draw6top:
+    out "."
+    popquiet
+    goto drawxtop 
+done
+
+$ left
+
+draw0left:
+    out " "
+    popquiet
+    goto drawxleft
+done
+
+draw1left:
+    out "+"
+    popquiet
+    goto drawxleft 
+done
+
+draw2left:
+    out "-"
+    popquiet
+    goto drawxleft 
+done
+
+draw3left:
+    out "|"
+    popquiet
+    goto drawxleft 
+done
+
+draw4left:
+    out "W"
+    popquiet
+    goto drawxleft 
+done
+
+draw5left:
+    out "'"
+    popquiet
+    goto drawxleft 
+done
+
+draw6left:
+    out "."
+    popquiet
+    goto drawxleft 
+done
+
+draw0front:
+    out " "
+    popquiet
+    goto drawxfront
+done
+
+draw1front:
+    out "+"
+    popquiet
+    goto drawxfront 
+done
+
+draw2front:
+    out "-"
+    popquiet
+    goto drawxfront 
+done
+
+draw3front:
+    out "|"
+    popquiet
+    goto drawxfront 
+done
+
+draw4front:
+    out "W"
+    popquiet
+    goto drawxfront 
+done
+
+draw5front:
+    out "'"
+    popquiet
+    goto drawxfront 
+done
+
+draw6front:
+    out "."
+    popquiet
+    goto drawxfront 
+done
+
+
+
+$ drawing the lights:
+
+$ top
+
+draw10lighttop:
+    out "W"
+    popquiet
+    goto drawxtop 
+done
+
+draw10mediumtop:
+    out ";"
+    popquiet
+    goto drawxtop 
+done
+
+draw10darktop:
+    out " "
+    popquiet
+    goto drawxtop 
+done
+
+$ --- 
+
+draw20lighttop:
+    out "W"
+    popquiet
+    goto drawxtop 
+done
+
+draw20mediumtop:
+    out ";"
+    popquiet
+    goto drawxtop 
+done
+
+draw20darktop:
+    out " "
+    popquiet
+    goto drawxtop 
+done
+
+$ --- 
+
+draw30lighttop:
+    out "W"
+    popquiet
+    goto drawxtop 
+done
+
+draw30mediumtop:
+    out ";"
+    popquiet
+    goto drawxtop 
+done
+
+draw30darktop:
+    out " "
+    popquiet
+    goto drawxtop 
+done
+
+$ left
+
+draw10lightleft:
+    out "W"
+    popquiet
+    goto drawxleft 
+done
+
+draw10mediumleft:
+    out ";"
+    popquiet
+    goto drawxleft 
+done
+
+draw10darkleft:
+    out " "
+    popquiet
+    goto drawxleft 
+done
+
+$ --- 
+
+draw20lightleft:
+    out "W"
+    popquiet
+    goto drawxleft 
+done
+
+draw20mediumleft:
+    out ";"
+    popquiet
+    goto drawxleft 
+done
+
+draw20darkleft:
+    out " "
+    popquiet
+    goto drawxleft 
+done
+
+$ --- 
+
+draw30lightleft:
+    out "W"
+    popquiet
+    goto drawxleft 
+done
+
+draw30mediumleft:
+    out ";"
+    popquiet
+    goto drawxleft 
+done
+
+draw30darkleft:
+    out " "
+    popquiet
+    goto drawxleft 
+done
+
+$ front
+
+draw10lightfront:
+    out "W"
+    popquiet
+    goto drawxfront 
+done
+
+draw10mediumfront:
+    out ";"
+    popquiet
+    goto drawxfront 
+done
+
+draw10darkfront:
+    out " "
+    popquiet
+    goto drawxfront 
+done
+
+$ --- 
+
+draw20lightfront:
+    out "W"
+    popquiet
+    goto drawxfront 
+done
+
+draw20mediumfront:
+    out ";"
+    popquiet
+    goto drawxfront 
+done
+
+draw20darkfront:
+    out " "
+    popquiet
+    goto drawxfront 
+done
+
+$ --- 
+
+draw30lightfront:
+    out "W"
+    popquiet
+    goto drawxfront 
+done
+
+draw30mediumfront:
+    out ";"
+    popquiet
+    goto drawxfront 
+done
+
+draw30darkfront:
+    out " "
+    popquiet
+    goto drawxfront 
+done
+
+
+
+$ !
+
+draw666666top:
+    out "\n"
+    popquiet
+    goto drawxtop 
+done
+
+draw666666left:
+    out "\n"
+    popquiet
+    goto drawxleft 
+done
+
+draw666666front:
+    out "\n"
+    popquiet
+    goto drawxfront 
+done

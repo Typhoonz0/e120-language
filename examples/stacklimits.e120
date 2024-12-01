@@ -1,0 +1,22 @@
+$ stackoverflow.e120
+$ this purposefully under/overflows the stack and causes an error
+$ stack overflow is when you try to push a value to a stack thats full
+$ stack underflow is when you try to pop a value to a stack thats empty
+
+start
+$ push 1 
+$ uncomment the above line to underflow the stack
+    ifequ 0 overflow
+    ifneq 0 underflow
+done
+
+overflow:
+    push 1
+    ifequsp 1024 halt
+    goto overflow
+done
+
+underflow:
+    clear
+    pop 
+done

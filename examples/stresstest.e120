@@ -1,0 +1,13 @@
+$ stresstest.e120
+$ sees how long it takes to fill the stack
+$ since e120 is an interpreted language on top of an interpreted language, it's extremely slow
+start 
+    stacksize 100000000
+    goto loop
+done
+
+loop:
+    push 255
+    ifneqsp 99999999 loop
+    out "Done"
+done

@@ -1,0 +1,26 @@
+{
+  "name": "e120-syntax-highlighting",
+  "displayName": "E120 Language Support",
+  "description": "Syntax highlighting for the E programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "e120",
+        "aliases": ["E120", "e120"],
+        "extensions": [".e120"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "e120",
+        "scopeName": "source.e120",
+        "path": "./syntaxes/e120.tmLanguage.json"
+      }
+    ]
+  }
+}
