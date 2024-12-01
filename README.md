@@ -161,6 +161,7 @@ Examples:
 
 ### `errorquiet`/`errorloud`
 **Usage**: `errorquiet` or `errorloud`
+
 Sets the status for printing errors - some errors may still get printed.
 
 ### `done`
