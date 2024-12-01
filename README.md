@@ -94,11 +94,11 @@ Pushes a specified value onto the stack.
 
 ### `pop`
 **Usage**: `pop`  
-Prints and removes the top value from the stack. 
+Prints the top value from the stack and moves the stack pointer by 1. 
 
 ### `popquiet`
 **Usage**: `popquiet`  
-Removes the top value from the stack, without printing its value.
+Moves the stack pointer by 1 without printing its value.
 
 ### `stack`
 **Usage**: `stack <index>`  
