@@ -4,12 +4,11 @@ start
     goto main
 stop
 main:
-    prompt "> "
-    out "\nEnter a number "
+    out "\nEnter a number > "
     in
-    out "Enter a number "
+    out "Enter a number > "
     in
-    out "Enter an operation (1 = +, 2 = -, 3 = x, 4 = /, 0 = exit) "
+    out "Enter an operation (1 = +, 2 = -, 3 = x, 4 = /, 0 = exit) > "
     in
     ifequ 1 addfunc
     ifequ 2 subfunc
