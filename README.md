@@ -62,6 +62,9 @@ This file showcases the capabilities of E120. The commands included are:
 **Usage**: `start`  
 This command marks the beginning of the program. Without this command, your program will not execute.
 
+### `$`
+**Usage**: `$ annotation`
+Use `$` to write a comment.
 
 ### `in`
 **Usage**: `in`  
