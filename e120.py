@@ -1,6 +1,6 @@
 """
 [Source code for the E120 programming language.]
-[Read /docs.md to use E120 properly]
+[Read /README.md to use E120 properly]
 
 (:
 
