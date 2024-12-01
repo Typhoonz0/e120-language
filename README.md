@@ -5,7 +5,7 @@ Read the WHOLE documentation and look at the example programs so you can make pr
 Run a e120 file like this: `python3 e120.py <program_filepath>.e120`
 Example: `python3 e120.py examples/colourtest.e120`
 
-(If python3 doesn't work for you, update to python v3)
+(If python3 doesn't work for you, update to python v3 or run every python3 command as just python)
 
 e120 is a STACK based language - instead of using variables to store data it uses a giant list:
 https://www.tutorialspoint.com/data_structures_algorithms/images/stack_representation.jpg
