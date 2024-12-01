@@ -67,7 +67,7 @@ for line in program_lines:
             program.append(number)
             token_counter += 1
 
-    elif code in {"out", "nfout", "shell", "external", "prompt", "comment"}:
+    elif code in {"out", "nfout", "shell", "external"}:
         fs = ' '.join(parts[1:])
         string_literal = fs.split('$')[0]
         string_literal = string_literal.strip().strip('"')
@@ -127,8 +127,6 @@ class Stack:
         stack.buf = stack.buf.reverse()
 
 pc = 0
-c = ""
-prompt = ""
 stack = Stack(1024)
 printerror = True
 
@@ -137,7 +135,6 @@ if start_line is not None:
 
 while program[pc] != "done":
     code = program[pc]
-   # print(code)
     pc += 1
 
     if code in {"push", "stack", "stacksize", "stacklen"}:
@@ -161,10 +158,13 @@ while program[pc] != "done":
 
     elif code == "errorloud":
         printerror = True
+        
     elif code == "pop":
             stack.outpop()
+        
     elif code == "popquiet":
             stack.pop()
+        
     elif code == "funcpos":
         print(label_tracker,end="")
 
@@ -176,7 +176,7 @@ while program[pc] != "done":
         except:
             os.system(f"python e120.py {string_literal}")
 
-    elif code in {"out", "outsl", "shell", "external", "prompt", "comment", "nfout"}:
+    elif code in {"out", "outsl", "shell", "external", "nfout"}:
         string_literal = program[pc]
         cle = len(string_literal)
         pc += 1
@@ -188,13 +188,6 @@ while program[pc] != "done":
             print(string_literal, end="")
         elif code == "shell":
             os.system(string_literal)
-
-
-        elif code == "prompt":
-            prompt = string_literal
-        
-        elif code == "comment":
-            c = program[pc]
 
     elif code in {"goto"}:
         if code == "goto":
