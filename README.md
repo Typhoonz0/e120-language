@@ -28,8 +28,6 @@ This file showcases the capabilities of E120. The commands included are:
 - `pop`
 - `popquiet`
 - `stack`
-- `comment`
-- `prompt`
 - `add`
 - `sub`
 - `mul`
@@ -78,16 +76,6 @@ Note: You must use `\n` to print a new line.
 ### `nfout`
 **Usage**: `nfout "<message>"`  
 Prints the specified message to the console with no escape encoding. 
-Note: You must use `\n` to print a new line.
-
-### `comment`
-**Usage**: `comment "sss"`  
-This command allows you to use a character (in this case `sss`) to comment out parts of your code.
-You can always use `$` to comment out parts of your code.
-
-### `prompt`
-**Usage**: `prompt "> "`  
-When using the `in` command, this prompts the user for input with the specified symbol.
 
 ### `goto`
 **Usage**: `goto <function>`  
