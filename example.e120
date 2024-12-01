@@ -12,8 +12,6 @@ $ ascii art font used in lines 1 - 5 is "small poison"
 $ you don't need to use indentation at all in e120 but it looks nicer
 
 start $ your program starts here - without this your program will not run
-    $comment "sss" $ makes it so you can use a character - in our case sss as well as $ to comment
-    prompt "> " $ when using the "in" command, it prompts the user using this symbol
     $ funcpos $ this is pretty advanced but useful - tells us where functions are parsed so we can skip to them when running scripts with external
     goto main $ it is good practise but optional to put your enviroment variables like these and then call your main function
 
