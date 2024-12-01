@@ -119,10 +119,10 @@ Prints the 0th element on the stack (the top value).
 - **`ifneq <value> <function>`**: Executes `<function>` if the top of the stack is not equal to `<value>`.
 - **`ifgtr <value> <function>`**: Executes `<function>` if the top of the stack is greater than `<value>`.
 - **`iflsr <value> <function>`**: Executes `<function>` if the top of the stack is lesser than `<value>`.
-- **`ifequsp <value> <function>`**: Executes `<function>` if the top of the stack is equal to the stack pointer's position.
-- **`ifneqsp <value> <function>`**: Executes `<function>` if the top of the stack is not equal to the stack pointer's position.
-- **`ifgtrsp <value> <function>`**: Executes `<function>` if the top of the stack is greater than the stack pointer's position.
-- **`iflsrsp <value> <function>`**: Executes `<function>` if the top of the stack is lesser than the stack pointer's position.
+- **`ifequsp <value> <function>`**: Executes `<function>` if `value` is equal to the stack pointer's position.
+- **`ifneqsp <value> <function>`**: Executes `<function>` if `value` is not equal to the stack pointer's position.
+- **`ifgtrsp <value> <function>`**: Executes `<function>` if `value` is greater than the stack pointer's position.
+- **`iflsrsp <value> <function>`**: Executes `<function>` if `value` is lesser than the stack pointer's position.
 
 ### `clear`
 **Usage**: `clear`  
@@ -142,8 +142,8 @@ Stops the program for debugging.
 
 ### `funcpos`
 **Usage**: `funcpos`
-THIS HAS AN ACCURACY OF 2 LINES - ADJUST [line] BY ± 1 IF PROGRAM EXECUTES INCORRECTLY.
 Prints where all the functions are in a script. 
+After using funcpos, delete it before running your code otherwise you code won't work.
 
 ### `external`
 **Usage**: `external "<filename> [line]"`  
