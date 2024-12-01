@@ -262,7 +262,7 @@ while program[pc] != "done":
         exit(0)
 
     elif code == "in":
-        number = input(prompt)
+        number = input("")
         try:
             number = int(number)
         except ValueError:
